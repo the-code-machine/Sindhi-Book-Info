@@ -1,22 +1,47 @@
-import React from 'react'
+'use client'
+import { menu } from '@/content/navbar';
+import { navItem } from '@/types/navbar';
+import Link from 'next/link';
+import React, { useEffect, useState } from 'react';
 
 export default function Navbar() {
+  const [date, setDate] = useState<null | Date>(null); // Initially null for server rendering
+
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setDate(new Date());
+    }, 1000); // Update every second
+
+    return () => clearInterval(intervalId); // Cleanup on component unmount
+  }, []);
+
   return (
-    <div>navbar
-    <div class="bg-white h-full w-screen">
-        <div class="bg-green-500  h-10 w-full flex justify-between px-8 items-center">
-        <ul class="md:flex hidden font-semibold space-x-5">
-            <li class="mx-[10px] cursor-pointer" >Home</li>
-            <li class="mx-[10px] cursor-pointer">Books</li>
-            <li class="mx-[10px] cursor-pointer">About</li>
-            <li class="mx-[10px] cursor-pointer">Gallery</li>
-        </ul>
-       </div> 
-       </div>
-        <div class="bg-green-500 space-x-3 h-full flex justify-center items-center">
-          <h1>SINDHI BOOK INFO.</h1>
+    <div className="flex flex-col w-full">
+      <div className="flex justify-between w-full p-3 bg-white h-16">
+        <img src="/logo/navLogo.svg" alt="Logo" />
+        <div className="flex flex-col justify-end items-end">
+          <p>
+            {date
+              ? date.toLocaleDateString() // Client-rendered value
+              : 'Loading...'} {/* Static fallback */}
+          </p>
+          <p className="font-semibold text-[16px]">
+            {date
+              ? `${date.toLocaleTimeString()} IST` // Client-rendered value
+              : 'Loading...'} {/* Static fallback */}
+          </p>
         </div>
-    
-    </div>
-  )
+      </div>
+      <div className="bg-primary  h-10 w-full flex px-8 justify-between items-center">
+        <div className=' flex space-x-5 h-full justify-center items-center'>
+          {menu.map((item: navItem, index: number) => (
+            <div key={index} className=' text-white uppercase text-[14px] font-medium'> <Link href={item.link}>{item.title}</Link></div>
+          ))}
+        </div>
+        <div>
+
+        </div>
+      </div>
+    </div >
+  );
 }
