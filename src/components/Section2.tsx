@@ -17,7 +17,7 @@ export default function HowToUseSection() {
                         Get started with Sindhi Books Info and explore the world of Sindhi literature.
                         In just a few minutes, learn how to navigate the platform, find offline libraries,
                         access curated book collections, and save your favorite books to a personalized list.
-                        Whether you're a casual reader or a researcher, discover how easy it is to connect with
+                        Whether you are  a casual reader or a researcher, discover how easy it is to connect with
                         the rich heritage of Sindhi literature.
                     </p>
                     <Link

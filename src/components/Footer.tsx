@@ -1,6 +1,5 @@
 import { footerMenu } from '@/content/footer';
 import { footerItem } from '@/types/footer';
-import Dropdown from '@/utils/Dropdown'
 import SimpleDropdown from '@/utils/SimpleDropdwon';
 import Link from 'next/link'
 import React, { useState } from 'react'
@@ -42,8 +41,8 @@ export default function Footer() {
 
                         {
 
-                            footerMenu.slice(0, 3).map((item: footerItem) => (
-                                <Link href={item.link} className=' md:text-right text-white font-medium text-[16px]'>{item.title}</Link>
+                            footerMenu.slice(0, 3).map((item: footerItem, index: number) => (
+                                <Link href={item.link} key={index} className=' md:text-right text-white font-medium text-[16px]'>{item.title}</Link>
                             ))
                         }
                     </div>
@@ -51,8 +50,8 @@ export default function Footer() {
 
                         {
 
-                            footerMenu.slice(3, 7).map((item: footerItem) => (
-                                <Link href={item.link} className=' md:text-right text-white font-medium text-[16px]'>{item.title}</Link>
+                            footerMenu.slice(3, 7).map((item: footerItem, index: number) => (
+                                <Link href={item.link} key={index} className=' md:text-right text-white font-medium text-[16px]'>{item.title}</Link>
                             ))
                         }
                     </div>
