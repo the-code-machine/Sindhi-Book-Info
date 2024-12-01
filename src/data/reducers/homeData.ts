@@ -1,6 +1,13 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+
+// Define the structure of your data
+interface HomeData {
+  [key: string]: unknown; // Replace with the exact structure if known
+}
+
+// Update the HomeDataState to use the HomeData type
 interface HomeDataState {
-  data: Record<string, any> | null; // Use a specific structure if known
+  data: HomeData | null;
   loading: boolean;
   error: string | null;
 }
@@ -19,7 +26,7 @@ const homeDataSlice = createSlice({
       state.loading = true;
       state.error = null;
     },
-    fetchDataSuccess(state, action: PayloadAction<Record<string, any>>) {
+    fetchDataSuccess(state, action: PayloadAction<HomeData>) {
       state.loading = false;
       state.data = action.payload;
     },
