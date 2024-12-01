@@ -1,7 +1,9 @@
 'use client';
 
+import { dropdownOptions } from "@/types/dropdown";
+
 interface SimpleDropdownProps {
-    options: { value: string; label: string }[]; // Array of dropdown options
+    options: dropdownOptions[]; // Array of dropdown options
     handleChange: any
     title: string
     selectedOption: string

@@ -1,4 +1,5 @@
 import { footerMenu } from '@/content/footer';
+import { dropdownOptions } from '@/types/dropdown';
 import { footerItem } from '@/types/footer';
 import SimpleDropdown from '@/utils/SimpleDropdwon';
 import Link from 'next/link'
@@ -11,7 +12,7 @@ export default function Footer() {
         setSelectedOption(event.target.value);
     };
 
-    const options: any[] = [
+    const options: dropdownOptions[] = [
         {
             value: 'English',
             label: 'English'

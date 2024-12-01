@@ -1,7 +1,7 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 interface HomeDataState {
-  data: any; // Replace `any` with a specific type for your data structure
+  data: {} | null; // Replace `any` with a specific type for your data structure
   loading: boolean;
   error: string | null;
 }
@@ -20,7 +20,7 @@ const homeDataSlice = createSlice({
       state.loading = true;
       state.error = null;
     },
-    fetchDataSuccess(state, action: PayloadAction<any>) {
+    fetchDataSuccess(state, action: PayloadAction<{}>) {
       // Replace `any` with your specific data type
       state.loading = false;
       state.data = action.payload;
