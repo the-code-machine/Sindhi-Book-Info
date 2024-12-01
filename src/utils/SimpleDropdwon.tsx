@@ -4,7 +4,7 @@ import { dropdownOptions } from "@/types/dropdown";
 
 interface SimpleDropdownProps {
     options: dropdownOptions[]; // Array of dropdown options
-    handleChange: any
+    handleChange: (event: React.ChangeEvent<HTMLSelectElement>) => void
     title: string
     selectedOption: string
 
