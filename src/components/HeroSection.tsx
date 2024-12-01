@@ -3,9 +3,9 @@ import React from 'react'
 export default function HeroSection() {
     return (
         <div className='w-full py-32  flex justify-center items-center bg-primary border-t-2 border-white'>
-            <div className=' flex flex-col  md:w-6/12 w-full  justify-center items-center'>
-                <h1 className='text-overLayHeading text-6xl font-extrabold'>Sindhi Books Info.</h1>
-                <p className=' text-white font-medium text-[22px] text-center'>Preserving the Essence of Sindhi Literature</p>
+            <div className=' flex flex-col  md:w-6/12 w-full px-4  justify-center items-center'>
+                <h1 className='text-overLayHeading md:text-6xl text-4xl font-extrabold'>Sindhi Books Info.</h1>
+                <p className=' text-white font-medium md:text-[22px] text-xl text-center'>Preserving the Essence of Sindhi Literature</p>
 
                 <div className=' bg-white rounded-md w-full flex p-2 mt-3  justify-center items-center'>
                     <input type="text" className=' w-full h-full mr-2 px-3 outline-none text-black placeholder:text-black' placeholder='Search by Book name, Author, library etc.' />

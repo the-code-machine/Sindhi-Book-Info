@@ -32,13 +32,13 @@ export default function Navbar() {
           </p>
         </div>
       </div>
-      <div className="bg-primary  h-10 w-full flex px-8 justify-between items-center">
+      <div className="bg-primary  h-10 w-full flex md:px-8 px-4 md:justify-between items-center">
         <div className=' flex space-x-5 h-full justify-center items-center'>
           {menu.map((item: navItem, index: number) => (
             <div key={index} className=' text-white uppercase text-[14px] font-medium'> <Link href={item.link}>{item.title}</Link></div>
           ))}
         </div>
-        <div>
+        <div className=' md:flex hidden'>
 
         </div>
       </div>

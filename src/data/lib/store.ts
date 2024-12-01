@@ -1,8 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
+import homeDataReducer from "../reducers/homeData";
 
 export const makeStore = () => {
   return configureStore({
-    reducer: {},
+    reducer: {
+      homeData: homeDataReducer,
+    },
   });
 };
 

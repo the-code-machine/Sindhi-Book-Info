@@ -3,6 +3,7 @@ import { useRef } from 'react'
 import { Provider } from 'react-redux'
 import { AppStore, makeStore, } from '@/data/lib/store'
 import Navbar from '@/components/Navbar'
+import Footer from '@/components/Footer'
 
 export default function StoreProvider({
     children,
@@ -17,5 +18,7 @@ export default function StoreProvider({
 
     return <div><Provider store={storeRef.current}>
         <Navbar />
-        {children}</Provider></div>
+        {children}
+        <Footer />
+    </Provider></div>
 }
