@@ -1,6 +1,7 @@
 import React from 'react'
 
 export default function HeroSection() {
+    
     return (
         <div className='w-full py-32  flex justify-center items-center bg-primary border-t-2 border-white'>
             <div className=' flex flex-col  md:w-6/12 w-full  justify-center items-center'>
